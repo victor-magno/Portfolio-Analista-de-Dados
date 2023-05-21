@@ -1,97 +1,149 @@
-﻿CREATE TABLE Sheet1(/* VARCHAR(10),Column_2 VARCHAR(10),Column_3 VARCHAR(10),Column_4 VARCHAR(10),Column_5 VARCHAR(10),Column_6 VARCHAR(10),Column_7 VARCHAR(10),Column_8 VARCHAR(10));
-INSERT INTO Sheet1 (/*,Column_2,Column_3,Column_4,Column_5,Column_6,Column_7,Column_8) VALUES 
-('Explorando os dados do COVID 19 com SQL','','','','','','',''),
-('*/','','','','','','',''),
-('SELECT *','','','','','','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE continente IS NOT NULL ','','','','','','',''),
-('ORDER BY 3','4','','','','','',''),
-('-- Fazendo o primeiro SELECT','','','','','','',''),
-('SELECT localização',' data',' total_casos',' novos_casos',' total_mortes',' populacao','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE continente is NOT NULL','','','','','','',''),
-('ORDER BY 1','2','','','','','',''),
-('-- Fazendo a análise do total de casos versus o total de mortes e mostrando a probabilidade de morrer se você contrair covid no meu país (Brasil)','','','','','','',''),
-('SELECT localização',' data',' total_casos',' total_mortes',' ROUND((total_mortes/total_casos)*100',' 2) AS taxa de morte','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE localização='Brazil'','','','','','','',''),
-('ORDER BY 1','2','','','','','',''),
-('-- Total de casos vs populacao',' mostrando o percentual da população no país que pegou COVID','','','','','',''),
-('SELECT localização',' data',' total_casos',' populacao',' ROUND((total_casos/populacao)*100',' 5) AS Casos por populacao','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('--WHERE localização='Brazil'','','','','','','',''),
-('ORDER BY 1','2','','','','','',''),
-('-- Paises com maior taxa de contaminação em relação a sua população','','','','','','',''),
-('SELECT localização',' populacao',' MAX(total_casos) AS Maior quantidade de infeccoes',' ROUND(MAX((total_casos/populacao))*100','2) AS Perc populacao infectada','','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('--WHERE localização='Brazil'','','','','','','',''),
-('GROUP BY localização',' populacao','','','','','',''),
-('ORDER BY Perc populacao infectada DESC','','','','','','',''),
-('-- Paises com maior taxa de morte em relação a sua população','','','','','','',''),
-('SELECT localização',' MAX(CAST(total_mortes AS int)) AS Total mortes','','','','','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE continente IS NOT NULL','','','','','','',''),
-('GROUP BY localização','','','','','','',''),
-('ORDER BY Total mortes DESC','','','','','','',''),
-('-- Análise por continente','','','','','','',''),
-('-- continentes com maior número de mortes por população','','','','','','',''),
-('SELECT continente',' MAX(CAST(total_mortes AS int)) AS Total mortes','','','','','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE continente IS NOT NULL','','','','','','',''),
-('GROUP BY continente','','','','','','',''),
-('ORDER BY Total mortes DESC','','','','','','',''),
-('-- Dados globais e vacinacao','','','','','','',''),
-('SELECT data',' SUM(novos_casos) AS TotalCases',' SUM(cast(new_deaths AS int)) AS TotalDeaths',' ROUND((SUM(cast(new_deaths AS int))/SUM(novos_casos))*100',' 2) AS taxa de morte','','',''),
-('FROM PortfolioProject..CovidDeaths','','','','','','',''),
-('WHERE continente is NOT NULL','','','','','','',''),
-('GROUP BY data','','','','','','',''),
-('ORDER BY 1','2','','','','','',''),
-('-- Total populacao vs Vacinacao: Percentual da populacao que recebeu pelo menos 1 dose da vacina','','','','','','',''),
-('SELECT dea.continente',' dea.localização',' dea.data',' dea.populacao',' vax.novas_vacinas','','',''),
-('',' SUM(CONVERT(int','vac.novas_vacinas)) OVER (Partition by dea.localização Order by dea.localização',' dea.data) as Pessoas vacinadas','','','',''),
-('FROM PortfolioProject..CovidDeaths dea','','','','','','',''),
-('JOIN PortfolioProject..CovidVacinacao vax','','','','','','',''),
-('	ON dea.localização = vax.localização','','','','','','',''),
-('	AND dea.data = vax.data','','','','','','',''),
-('WHERE dea.continente IS NOT NULL','','','','','','',''),
-('ORDER BY 2','3','','','','','',''),
-('-- Usando CTE para realizar cálculo na partição por consulta','','','','','','',''),
-('WITH populacaovsVacinacao (continente',' localização',' data',' populacao',' novas_vacinas',' Pessoas vacinadas)','',''),
-('AS','','','','','','',''),
-('(','','','','','','',''),
-('SELECT dea.continente',' dea.localização',' dea.data',' dea.populacao',' vax.novas_vacinas',' SUM(CONVERT(int','vax.novas_vacinas)) OVER (Partition by dea.localização ORDER BY dea.localização',' dea.data) AS Pessoas vacinadas'),
-('FROM PortfolioProject..CovidDeaths dea','','','','','','',''),
-('JOIN PortfolioProject..CovidVax vax','','','','','','',''),
-('	ON dea.localização = vax.localização','','','','','','',''),
-('	and dea.data = vax.data','','','','','','',''),
-('WHERE dea.continente is NOT NULL ','','','','','','',''),
-(')','','','','','','',''),
-('SELECT *',' ROUND((Pessoas vacinadas/populacao)*100','2) AS Percentual','','','','',''),
-('FROM populacaovsVacinacao','','','','','','',''),
-('DROP Table if exists #Perc_populacao_vacinada','','','','','','',''),
-('Create Table #Perc_populacao_vacinada','','','','','','',''),
-('(','','','','','','',''),
-('continente nvarchar(255)','','','','','','',''),
-('localização nvarchar(255)',' ','','','','','',''),
-('data datatime',' ','','','','','',''),
-('populacao numeric',' ','','','','','',''),
-('novas_vacinas numeric',' ','','','','','',''),
-('Pessoas vacinadas numeric','','','','','','',''),
-(')','','','','','','',''),
-('INSERT INTO #Perc_populacao_vacinada','','','','','','',''),
-('SELECT dea.continente',' dea.localização',' dea.data',' dea.populacao',' vax.novas_vacinas',' SUM(CONVERT(int','vax.novas_vacinas)) OVER (Partition by dea.localização ORDER BY dea.localização',' dea.data) AS Pessoas vacinadas'),
-('FROM PortfolioProject..CovidDeaths dea','','','','','','',''),
-('JOIN PortfolioProject..CovidVax vax','','','','','','',''),
-('	ON dea.localização = vax.localização','','','','','','',''),
-('	and dea.data = vax.data','','','','','','',''),
-('WHERE dea.continente is NOT NULL ','','','','','','',''),
-('SELECT *',' ROUND((Pessoas vacinadas/populacao)*100','2) AS Percentual','','','','',''),
-('FROM #Perc_populacao_vacinada','','','','','','',''),
-('-- Criando uma view','','','','','','',''),
-('CREATE View Perc_populacao_vacinada as','','','','','','',''),
-('SELECT dea.continente',' dea.localização',' dea.data',' dea.populacao',' vax.novas_vacinas',' SUM(CONVERT(int','vax.novas_vacinas)) OVER (Partition by dea.localização ORDER BY dea.localização',' dea.data) AS Pessoas vacinadas'),
-('FROM PortfolioProject..CovidDeaths dea','','','','','','',''),
-('JOIN PortfolioProject..CovidVax vax','','','','','','',''),
-('	ON dea.localização = vax.localização','','','','','','',''),
-('	and dea.data = vax.data','','','','','','',''),
-('WHERE dea.continente is NOT NULL ','','','','','','','');
+-- Limpeza dos dados
+-----------------------------------------------------------------------
+
+SELECT *
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+-----------------------------------------------------------------------
+-- Padronizando o formato de data
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD Data_atualizada Date;
+
+Update SQLPortfolio.dbo.habitacao_fortaleza
+SET Data_atualizada = CONVERT(Date,Data_venda)
+
+SELECT Data_atualizada, Data_venda
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+-----------------------------------------------------------------------
+-- Dados de endereços
+
+
+SELECT *
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+ORDER BY ParcelID
+
+
+SELECT a.ParcelID, a.Endereco, b.ParcelID, b.Endereco, ISNULL(a.Endereco,b.Endereco)
+FROM SQLPortfolio.dbo.habitacao_fortaleza a
+JOIN SQLPortfolio.dbo.habitacao_fortaleza b
+	ON a.ParcelID = b.ParcelID
+	AND a.[UniqueID ] <> b.[UniqueID ]
+WHERE a.Endereco IS NULL
+
+UPDATE a
+SET Endereco = ISNULL(a.Endereco,b.Endereco)
+FROM SQLPortfolio.dbo.habitacao_fortaleza a
+JOIN SQLPortfolio.dbo.habitacao_fortaleza b
+	ON a.ParcelID = b.ParcelID
+	AND a.[UniqueID ] <> b.[UniqueID ]
+WHERE a.Endereco is NULL
+
+SELECT Endereco
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+WHERE Endereco is NULL
+
+
+-------------------------------------------------------------------------
+-- Dividindo o endereço completo em colunas individuais (endereço, cidade, estado)
+
+
+SELECT Endereco
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD rua NVARCHAR(255);
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET rua = SUBSTRING(Endereco, 1, CHARINDEX(',', Endereco)-1) 
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD Cidade NVARCHAR(255);
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET Cidade = SUBSTRING(Endereco, CHARINDEX(',', Endereco) +1 , LEN(Endereco)) 
+
+SELECT rua, Cidade
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+-- Endereço do Proprietário
+
+SELECT Endereco_proprietario
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD Endereco_proprietario_rua NVARCHAR(255);
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET Endereco_proprietario_rua = PARSENAME(REPLACE(Endereco_proprietario, ',', '.') , 3)
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD Endereco_proprietario_cidade NVARCHAR(255);
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET Endereco_proprietario_cidade = PARSENAME(REPLACE(Endereco_proprietario, ',', '.') , 2)
+
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+ADD Endereco_proprietario_estado NVARCHAR(255);
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET Endereco_proprietario_estado = PARSENAME(REPLACE(Endereco_proprietario, ',', '.') , 1)
+
+
+------------------------------------------------------------------------------
+-- Alterando "S" para "Sim" e "N" para "Não" no campo "Vendido como vago"
+
+SELECT DISTINCT status_venda
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+
+UPDATE SQLPortfolio.dbo.habitacao_fortaleza
+SET status_venda = CASE WHEN status_venda = 'Y' THEN 'Yes'
+	WHEN status_venda = 'N' THEN 'No'
+	ELSE status_venda
+	END
+
+
+	
+-------------------------------------------------------------------------------
+-- Removendo itens duplicados
+
+WITH RowNumCTE AS(
+SELECT *,
+   ROW_NUMBER() OVER (
+   PARTITION BY ParcelID,
+                Endereco,
+				Preco,
+				Data_venda,
+				Referencia
+				ORDER BY
+				   ID
+				   ) row_num
+
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+)
+--SELECT *
+DELETE
+FROM RowNUMCTE
+WHERE row_num > 1
+--ORDER BY Endereco
+
+----------------------------------------------------------------
+-- Deletando colunas não utilizadas
+
+
+SELECT *
+FROM SQLPortfolio.dbo.habitacao_fortaleza
+
+ALTER TABLE SQLPortfolio.dbo.habitacao_fortaleza
+DROP COLUMN Data_venda, Endereco_proprietario, TaxDistrict, Endereco
