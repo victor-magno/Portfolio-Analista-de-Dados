@@ -11,3 +11,25 @@ No meu tempo livre, gosto de explorar novas ferramentas e técnicas de análise 
 Meu currículo em pdf .
 
 Este é um repositório para mostrar habilidades, compartilhar projetos e acompanhar meu progresso em tópicos relacionados a Data Analytics.
+
+# Índice
+
+- Sobre
+- Projetos
+  - Python
+    - Analisando os fatores que contribuem para o sucesso de um filme
+    - Análise de vendas da loja de tecnologia 
+  - SQL
+    - Exploração de dados Covid 19
+    - Limpeza de Dados Habitacionais de Fortaleza
+  - Excel/Google Sheets
+  - Power BI
+    - Dashboard de Vendas
+    - Dashboard Financeiro
+    - Dashboard de RH
+    - Dashboard de Produção
+    
+# Contato
+- Linkedin: @victor_magno
+- E-mail: victormagno08@gmail.com 
+
