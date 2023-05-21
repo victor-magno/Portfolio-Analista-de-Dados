@@ -19,8 +19,6 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
   - SQL
     - Exploração de dados Covid 19
     - Limpeza de Dados Habitacionais de Fortaleza
-    - Analisando os fatores que contribuem para o sucesso de um filme
-    - Análise de vendas da loja de tecnologia 
   - Excel/Google Sheets
   - Power BI
     - Dashboard de Vendas
