@@ -1,4 +1,6 @@
-Victor Magno - Portfólio de Analista de Dados
+## Victor Magno - Portfólio de Analista de Dados
+
+## Sobre
 
 Olá, eu sou o Victor! Tenho formação em Educação Física e atualmente estou a migrando de carreira e a caminho de concluir minha trilha em Data Science. Desenvolvi uma base sólida em pensamento analítico e uma afinidade pelo uso de dados para descobrir insights significativos. Trago minhas habilidades técnicas e analíticas para o campo da análise de dados como um especialista em dados de nível básico.
 
