@@ -16,19 +16,17 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
 
 - Sobre
 - Projetos
-  - Python
-    - Analisando os fatores que contribuem para o sucesso de um filme
-    - Análise de vendas da loja de tecnologia 
   - SQL
     - Exploração de dados Covid 19
     - Limpeza de Dados Habitacionais de Fortaleza
+    - Analisando os fatores que contribuem para o sucesso de um filme
+    - Análise de vendas da loja de tecnologia 
   - Excel/Google Sheets
   - Power BI
     - Dashboard de Vendas
     - Dashboard Financeiro
     - Dashboard de RH
     - Dashboard de Produção
-    
 # Contato
 - Linkedin: @victor_magno
 - E-mail: victormagno08@gmail.com 
