@@ -20,6 +20,9 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - Exploração de dados Covid 19
     - Limpeza de Dados Habitacionais de Fortaleza
   - Excel/Google Sheets
+    - Planilha Fluxo de Caixa
+    - Planilha Controle de Estoque
+    - Planilha de Cobrança
   - Power BI
     - Dashboard de Vendas
     - Dashboard Financeiro
