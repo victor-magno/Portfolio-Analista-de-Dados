@@ -17,8 +17,8 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
 - Sobre
 - Projetos
   - SQL
-    - Exploração de dados Covid 19
-    - Limpeza de Dados Habitacionais de Fortaleza
+    - [Exploração de dados Covid 19](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20COVID.sql)
+    - [Limpeza de Dados Habitacionais de Fortaleza](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20Limpeza%20de%20Dados%20Habitacao.sql)
   - Excel/Google Sheets
     - Planilha Fluxo de Caixa
     - Planilha Controle de Estoque
