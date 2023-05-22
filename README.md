@@ -8,7 +8,7 @@ Durante meus estudos, aprimorei minha capacidade de trabalhar com dados complexo
 
 No meu tempo livre, gosto de explorar novas ferramentas e técnicas de análise de dados e estou sempre procurando oportunidades para expandir meus conhecimentos e habilidades. Seja trabalhando em equipe ou de forma independente, sou movido pela emoção de descobrir novos insights e pela satisfação de usar dados para resolver problemas complexos.
 
-Meu currículo em pdf .
+Meu currículo em [pdf](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/CV%20Victor%20Magno.pdf) .
 
 Este é um repositório para mostrar habilidades, compartilhar projetos e acompanhar meu progresso em tópicos relacionados a Data Analytics.
 
