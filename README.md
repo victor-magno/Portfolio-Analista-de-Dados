@@ -23,7 +23,7 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - [Planilha de SAC](https://docs.google.com/spreadsheets/d/1SBD2-OJKyvX3xsx4bcgjK0C-QPiq-HK_/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
     - [Planilha Controle de Processo Seletivo](https://docs.google.com/spreadsheets/d/bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3/edit?usp=share_link&ouid=104964872973820647278&rtpof=true&sd=true)
     - [Planilha de Gestão](https://docs.google.com/spreadsheets/d/1DImUBnZ70ptciL36YVpqeN9y6dzCXIgN/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
-    - [Planilha de Gestão de OS](https://docs.google.com/spreadsheets/d/bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
+    - [Planilha de Gestão de OS](https://docs.google.com/spreadsheets/d/1OWzlx8Lv5t6ltGLsCN3QM17v48IwaAh3/edit?usp=sharing&ouid=104964872973820647278&rtpof=true&sd=true)
   - Power BI
     - [Dashboard de Comércio Virtual e Logística]()
     - [Dashboard Vendas]()
