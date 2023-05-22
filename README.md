@@ -29,6 +29,6 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - Dashboard de RH
     - Dashboard de Produção
 # Contato
-- Linkedin: @victor_magno
+- Linkedin: [@victor_magno](https://www.linkedin.com/in/victor-magno-pessoa-moreira-a33974258/)
 - E-mail: victormagno08@gmail.com 
 
