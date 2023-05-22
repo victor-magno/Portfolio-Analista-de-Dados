@@ -20,10 +20,10 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - [Exploração de dados Covid 19](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20COVID.sql)
     - [Limpeza de Dados Habitacionais de Fortaleza](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20Limpeza%20de%20Dados%20Habitacao.sql)
   - Excel/Google Sheets
-    - [Planilha de SAC]()
-    - [Planilha Controle de Processo Seletivo]()
-    - [Planilha de Gestão]()
-    - [Planilha de Gestão de OS]()
+    - [Planilha de SAC](https://docs.google.com/spreadsheets/d/1SBD2-OJKyvX3xsx4bcgjK0C-QPiq-HK_/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
+    - [Planilha Controle de Processo Seletivo](https://docs.google.com/spreadsheets/d/bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
+    - [Planilha de Gestão](https://docs.google.com/spreadsheets/d/1DImUBnZ70ptciL36YVpqeN9y6dzCXIgN/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
+    - [Planilha de Gestão de OS](https://docs.google.com/spreadsheets/d/bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3/edit?usp=share_link&ouid=100874439055450784118&rtpof=true&sd=true)
   - Power BI
     - [Dashboard de Comércio Virtual e Logística]()
     - [Dashboard Vendas]()
