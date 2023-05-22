@@ -25,10 +25,9 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - [Planilha de Gestão]()
     - [Planilha de Gestão de OS]()
   - Power BI
-    - Dashboard de Vendas
-    - Dashboard Financeiro
-    - Dashboard de RH
-    - Dashboard de Produção
+    - [Dashboard de Comércio Virtual e Logística]()
+    - [Dashboard Vendas]()
+    - [Dashboard d Investimentos]()
 # Contato
 - Linkedin: [@victor_magno](https://www.linkedin.com/in/victor-magno-pessoa-moreira-a33974258/)
 - E-mail: victormagno08@gmail.com 
