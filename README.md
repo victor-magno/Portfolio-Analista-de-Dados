@@ -20,9 +20,9 @@ Este é um repositório para mostrar habilidades, compartilhar projetos e acompa
     - [Exploração de dados Covid 19](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20COVID.sql)
     - [Limpeza de Dados Habitacionais de Fortaleza](https://github.com/victor-magno/Portfolio-Analista-de-Dados/blob/main/Projeto%20de%20Portf%C3%B3lio%20Limpeza%20de%20Dados%20Habitacao.sql)
   - Excel/Google Sheets
-    - Planilha Fluxo de Caixa
-    - Planilha Controle de Estoque
-    - Planilha de Cobrança
+    - Planilha de SAC + dashboard (Excel)
+    - Planilha Controle de Estoque (Versão para Excel e Google Sheets)
+    - Planilha de Cobrança (Google Sheets (versão para Excel e Google Sheets)
   - Power BI
     - Dashboard de Vendas
     - Dashboard Financeiro
